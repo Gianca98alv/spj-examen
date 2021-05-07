@@ -24,10 +24,6 @@ public class Sorteo {
     public Sorteo() {
     }
     
-    public Sorteo(int numero_sorteo){
-        this.numero_sorteo = numero_sorteo;
-    }
-    
     public Sorteo(int numero_sorteo, Date fecha, String motivo, int retorno, int numero_ganador, int estado) {
         this.numero_sorteo = numero_sorteo;
         this.fecha = fecha;
@@ -41,7 +37,7 @@ public class Sorteo {
         return numero_sorteo;
     }
     
-    public void setNumero_sorteo() {
+    public void setNumero_sorteo(int numero_sorteo) {
         this.numero_sorteo = numero_sorteo;
     }
     
@@ -49,7 +45,7 @@ public class Sorteo {
         return fecha;
     } 
     
-    public void setFecha() {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
     
@@ -57,7 +53,7 @@ public class Sorteo {
         return motivo;
     }
     
-    public void setMotivo() {
+    public void setMotivo(String motivo) {
         this.motivo = motivo;
     }
     
@@ -65,7 +61,7 @@ public class Sorteo {
         return retorno;
     }
     
-    public void setRetorno() {
+    public void setRetorno(int retorno) {
         this.retorno = retorno;
     }
     
@@ -73,7 +69,7 @@ public class Sorteo {
         return numero_ganador;
     }
     
-    public void setNumero_ganador() {
+    public void setNumero_ganador(int numero_ganador) {
         this.numero_ganador = numero_ganador;
     }
     
@@ -81,20 +77,14 @@ public class Sorteo {
         return estado;
     }
     
-    public void setEstado() {
+    public void setEstado(int estado) {
         this.estado = estado;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "Sorteo{" + "numero_sorteo=" + numero_sorteo + ", fecha=" + fecha + ", motivo=" + motivo + ", retorno=" + retorno + ", numero_ganador=" + numero_ganador + ", estado=" + estado + '}';
+    }
     
     
     
