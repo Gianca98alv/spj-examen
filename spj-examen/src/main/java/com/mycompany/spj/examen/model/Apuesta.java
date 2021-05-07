@@ -18,6 +18,7 @@ public class Apuesta {
     private int monto_premio;
     
     public Apuesta() {
+        this.sorteo = null;
     }
     
     public Apuesta(Usuario usuario, Sorteo sorteo, int monto_apuesta, int monto_premio) {

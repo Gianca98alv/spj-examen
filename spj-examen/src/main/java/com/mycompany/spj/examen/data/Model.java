@@ -85,6 +85,35 @@ public class Model {
         this.lista_apuestas = lista_apuestas;
     }
     
+    public List<Sorteo> getListaSorteosTerminados() {
+        Date date = new Date();
+        List<Sorteo> terminados = new ArrayList<>();
+        for(Sorteo sorteo : this.lista_sorteos) {
+            if(sorteo.getFecha().compareTo(date) > 0) {
+                terminados.add(sorteo);
+            }
+        }
+        return terminados;
+    }
     
+    public List<Sorteo> getListaSorteosFuturos() {
+        Date date = new Date();
+        List<Sorteo> futuros = new ArrayList<>();
+        for(Sorteo sorteo : this.lista_sorteos) {
+            if(sorteo.getFecha().compareTo(date) <= 0) {
+                futuros.add(sorteo);
+            }
+        }
+        return futuros;
+    }
+    
+    public Usuario findUsuarioByCedula(String cedula) {
+        for(Usuario usuario : this.lista_usuarios) {
+            if(usuario.getCedula().equals(cedula)) {
+                return usuario;
+            }
+        }
+        return null;
+    }
     
 }
