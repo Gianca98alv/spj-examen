@@ -43,7 +43,7 @@
                          <td>
                             <%= sorteo.getNumero_ganador() %>
                         </td>
-                        <form name="name" action="/spj-examen/admin/update/sort">
+                        <form name="name" action="/spj-examen/admin/update/sort" method="post">
                             <input type="hidden" name="numero_sorteo" value="<%= sorteo.getNumero_sorteo() %>">
                             <td>
                                 <input type="text" name="numero_ganador" >

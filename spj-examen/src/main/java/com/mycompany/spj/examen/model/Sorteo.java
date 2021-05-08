@@ -19,13 +19,13 @@ public class Sorteo {
     private Date fecha;
     private String motivo;
     private int retorno;
-    private int numero_ganador;
+    private Integer numero_ganador;
     private int estado;
     
     public Sorteo() {
     }
     
-    public Sorteo(int numero_sorteo, Date fecha, String motivo, int retorno, int numero_ganador, int estado) {
+    public Sorteo(int numero_sorteo, Date fecha, String motivo, int retorno, Integer numero_ganador, int estado) {
         this.numero_sorteo = numero_sorteo;
         this.fecha = fecha;
         this.motivo = motivo;
@@ -71,11 +71,11 @@ public class Sorteo {
         this.retorno = retorno;
     }
     
-    public int getNumero_ganador() {
+    public Integer getNumero_ganador() {
         return numero_ganador;
     }
     
-    public void setNumero_ganador(int numero_ganador) {
+    public void setNumero_ganador(Integer numero_ganador) {
         this.numero_ganador = numero_ganador;
     }
     

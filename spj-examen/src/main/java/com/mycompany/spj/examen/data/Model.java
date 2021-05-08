@@ -57,7 +57,7 @@ public class Model {
             
             String fecha2 = "2/2/2022";
             Date date2 = format.parse(fecha2);
-            Sorteo s2 = new Sorteo(2, date2, "Sorteo Día de las Madres", 2, 8, 3);
+            Sorteo s2 = new Sorteo(2, date2, "Sorteo Día de las Madres", 2, null, 3);
             lista_sorteos.add(s2);
             
             String fecha3 = "3/3/2003";
