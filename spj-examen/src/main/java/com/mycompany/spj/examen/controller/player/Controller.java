@@ -1,5 +1,6 @@
 package com.mycompany.spj.examen.controller.player;
 
+import com.mycompany.spj.examen.model.Apuesta;
 import com.mycompany.spj.examen.model.Sorteo;
 import com.mycompany.spj.examen.model.Usuario;
 import java.io.IOException;
@@ -10,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(name = "Controller", urlPatterns = {"/player", "/player/bet"})
+@WebServlet(name = "PlayerController", urlPatterns = {"/player", "/player/bet"})
 public class Controller extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -46,6 +47,7 @@ public class Controller extends HttpServlet {
             int numero_juego = Integer.getInteger(request.getParameter("numero_juego"));
             int monto_apuesta = Integer.getInteger(request.getParameter("monto_apuesta"));
             Sorteo sorteo = com.mycompany.spj.examen.data.Model.instance().findSorteo(numero_sorteo);
+            Apuesta apuesta = new Apuesta(usuario, sorteo, numero_juego, monto_apuesta, 0);
             return "/player/show";
         } catch(Exception e) {
             return "/pages/Error.jsp"; 

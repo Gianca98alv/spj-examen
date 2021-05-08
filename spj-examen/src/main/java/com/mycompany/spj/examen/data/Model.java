@@ -139,7 +139,14 @@ public class Model {
         lista_apuestas.add(apuesta);
     }
     
-    
+    public void updateSort(int numero_sorteo, int numero_ganador) {
+        for(Sorteo sorteo : this.lista_sorteos) {
+            if(sorteo.getNumero_sorteo() == numero_sorteo) {
+                sorteo.setNumero_ganador(numero_ganador);
+                break;
+            }
+        }
+    }
     
     
     
