@@ -52,7 +52,7 @@ public class Model {
             lista_sorteos.add(s);
             
             lista_apuestas = new ArrayList<>();
-            Apuesta a = new Apuesta(u, s, 2500, 50000); 
+            Apuesta a = new Apuesta(u, s, 11, 2500, 50000); 
             lista_apuestas.add(a);
             
         } catch (Exception ex) {
@@ -115,5 +115,32 @@ public class Model {
         }
         return null;
     }
+    
+    public List<Apuesta> findApuestasByUsuario(String cedula) {
+        List<Apuesta> apuestas = new ArrayList<>();
+        for(Apuesta apuesta : this.lista_apuestas) {
+            if(apuesta.getUsuario().getCedula().equals(cedula)) {
+                apuestas.add(apuesta);
+            }
+        }
+        return apuestas;
+    }
+    
+    public Sorteo findSorteo(int numero_sorteo) {
+        for(Sorteo sorteo : this.lista_sorteos) {
+            if(sorteo.getNumero_sorteo() == numero_sorteo) {
+                return sorteo;
+            }
+        }
+        return null;
+    }
+    
+    public void addBet(Apuesta apuesta) {
+        lista_apuestas.add(apuesta);
+    }
+    
+    
+    
+    
     
 }
