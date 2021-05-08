@@ -41,7 +41,7 @@ public class Controller extends HttpServlet {
         } catch(Exception e) {
             System.out.println(e);
         }
-        return "/pages/administrador/View.jsp";
+        return "/admin";
     }
 
     @Override

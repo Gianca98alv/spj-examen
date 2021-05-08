@@ -24,6 +24,8 @@
                         <th> Fecha   </th>
                         <th> Retorno </th>
                         <th> Ganador </th>
+                        <th> Número ganador <th>
+                        <th>  <th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,6 +43,15 @@
                          <td>
                             <%= sorteo.getNumero_ganador() %>
                         </td>
+                        <form name="name" action="/spj-examen/admin/update/sort">
+                            <input type="hidden" name="numero_sorteo" value="<%= sorteo.getNumero_sorteo() %>">
+                            <td>
+                                <input type="text" name="numero_ganador" >
+                            </td>
+                            <td>
+                                <input class="button" type="submit" value="Actualizar"> 
+                            </td>
+                        </form>
                     </tr>
                     <%}%>
                 </tbody>
