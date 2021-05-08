@@ -13,15 +13,15 @@ html, body {
 }
 
 .logo{
-    width: 90px;
-    height: 80px;
-    margin: -15px;
+    width: 70px;
+    height: 90px;
+    margin: -10px;
 }
 
 .title{
     font-size: 30px;
     font-weight: bold;
-    margin:20px;
+    margin:40px;
 }
 
 .container{
@@ -41,7 +41,7 @@ input[type="text"].invalid, input[type="password"].invalid, select.invalid{
 }
 
 .button{
-    background-color: #005D99;
+    background-color: #D0194D;
     color: white;
     height: 30px;
     width: 100%;
@@ -49,7 +49,7 @@ input[type="text"].invalid, input[type="password"].invalid, select.invalid{
 
 
 footer {
-    background-color: #005D99;
+    background-color: #D0194D;
     font-family: fantasy;
     font: 20px bold;
     height: 49px;

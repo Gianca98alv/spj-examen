@@ -1,7 +1,6 @@
+<%@page import="com.mycompany.spj.examen.controller.login.Model"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.Map"%>
-<%@page import="com.example.cursosonline.model.Curso"%>
-<%@page import="com.example.cursosonline.controller.login.Model"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <% Map<String, String> errors =(Map<String,String>) request.getAttribute("errors"); %>
@@ -11,14 +10,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cursos Online</title> 
+        <title>SPJ</title> 
         <%@ include file="/pages/Head.jsp" %>
     </head>
 <body >
     <%@ include file="/pages/Header.jsp" %>
     <div class="container  ml-3">
         <h2>Iniciar Sesión</h2>
-        <form name="form" action="/CursosOnline/login/login" method="post">
+        <form name="form" action="/spj-examen/login/login" method="post">
             <table>
                 <thead>
                     <tr>
@@ -26,8 +25,8 @@
                             Cedula 
                         </td>
                         <td>
-                            <input class ="<%=verifyErrors("idUsuario",errors)%>" type="text" name="idUsuario" 
-                            value="<%=credencials.get("idUsuario")[0]%>" title="<%=getTittle("idUsuario",errors)%>"><br>
+                            <input class ="<%=verifyErrors("cedula",errors)%>" type="text" name="cedula" 
+                            value="<%=credencials.get("cedula")[0]%>" title="<%=getTittle("cedula",errors)%>"><br>
                         </td>
                     </tr>
                     <tr>
@@ -42,11 +41,6 @@
                     <tr>
                         <td colspan = 2>
                             <input class="button" type="submit" value="Iniciar"> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan = 2>
-                            <input class="button" type="submit" value="Registrarse"></input> 
                         </td>
                     </tr>
                 </thead>
@@ -69,7 +63,7 @@
     
     private Map<String,String[]> getCredencials(Model model){
         Map<String,String[]> credencials = new HashMap<String,String[]>();
-        credencials.put("idUsuario", new String[]{model.getCurrent().getIdUsuario()});
+        credencials.put("cedula", new String[]{model.getCurrent().getCedula()});
         credencials.put("clave", new String[]{model.getCurrent().getClave()});
         return credencials;
     }

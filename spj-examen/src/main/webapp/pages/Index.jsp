@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Cursos Online</title> 
+        <title>SPJ</title> 
         <%@ include file="/pages/Head.jsp" %>
     </head>
 <body>
@@ -33,7 +33,7 @@
                             <%= sorteo.getMotivo() %>
                         </td>
                         <td>
-                            <%= sorteo.getFecha() %>
+                            <%= sorteo.getStringDate() %>
                         </td >
                         <td>
                             <%= sorteo.getRetorno() %>
@@ -61,7 +61,7 @@
                             <%= sorteo.getMotivo() %>
                         </td>
                         <td>
-                            <%= sorteo.getFecha() %>
+                             <%= sorteo.getStringDate() %>
                         </td >
                         <td>
                             <%= sorteo.getRetorno() %>

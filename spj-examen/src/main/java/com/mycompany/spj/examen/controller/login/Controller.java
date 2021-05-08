@@ -70,10 +70,10 @@ public class Controller extends HttpServlet {
             Usuario db_user = this.validateCredentials(model.getCurrent());
             session.setAttribute("usuario", db_user);
             if(db_user.getAdministrador()){
-                return "";
+                return "/admin";
             }
             else {
-                return "";
+                return "/player";
             }
         } catch (Exception ex) {
             Map<String, String> errors = new HashMap<>();

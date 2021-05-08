@@ -1,6 +1,5 @@
 package com.mycompany.spj.examen.controller.admin;
 
-import com.mycompany.spj.examen.controller.*;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,7 +29,7 @@ public class Controller extends HttpServlet {
         } catch(Exception e) {
             System.out.println(e);
         }
-        return "/pages/admin.jsp";
+        return "/pages/administrador/View.jsp";
     }
     
     private String updateSort(HttpServletRequest request) {
@@ -42,7 +41,7 @@ public class Controller extends HttpServlet {
         } catch(Exception e) {
             System.out.println(e);
         }
-        return "/pages/admin.jsp";
+        return "/pages/administrador/View.jsp";
     }
 
     @Override

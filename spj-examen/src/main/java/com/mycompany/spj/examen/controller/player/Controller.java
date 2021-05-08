@@ -32,7 +32,7 @@ public class Controller extends HttpServlet {
             Usuario usuario = (Usuario) session.getAttribute("usuario");
             model.setLista_apuestas(com.mycompany.spj.examen.data.Model.instance().findApuestasByUsuario(usuario.getCedula()));
             model.setApuesta(null);
-            return "/pages/player/View.jsp;";
+            return "/pages/player/View.jsp";
         } catch (Exception ex) {
             return "/pages/Error.jsp"; 
         }
@@ -48,6 +48,7 @@ public class Controller extends HttpServlet {
             int monto_apuesta = Integer.getInteger(request.getParameter("monto_apuesta"));
             Sorteo sorteo = com.mycompany.spj.examen.data.Model.instance().findSorteo(numero_sorteo);
             Apuesta apuesta = new Apuesta(usuario, sorteo, numero_juego, monto_apuesta, 0);
+            com.mycompany.spj.examen.data.Model.instance().addBet(apuesta);
             return "/player/show";
         } catch(Exception e) {
             return "/pages/Error.jsp"; 

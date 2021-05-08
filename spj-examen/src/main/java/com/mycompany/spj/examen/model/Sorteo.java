@@ -5,6 +5,7 @@
  */
 package com.mycompany.spj.examen.model;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -47,6 +48,11 @@ public class Sorteo {
     
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+    
+    public String getStringDate(){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.format(fecha);
     }
     
     public String getMotivo() {
