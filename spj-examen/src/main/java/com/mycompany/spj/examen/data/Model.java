@@ -41,19 +41,52 @@ public class Model {
         
         try {
             lista_usuarios = new ArrayList<>();
-            Usuario u = new Usuario(true, "1234", "1234", "Gonzalez", "Luis");
-            lista_usuarios.add(u);
+            Usuario u1 = new Usuario(true, "1234", "1234", "Gonzalez", "Luis");
+            lista_usuarios.add(u1);
+            Usuario u2 = new Usuario(false, "0000", "4567", "Villalobos", "Davide");
+            lista_usuarios.add(u2);
+            Usuario u3 = new Usuario (false, "8900", "3456", "Alfaro", "Carlos");
+            lista_usuarios.add(u3);
             
             lista_sorteos = new ArrayList<>();
-            String string = "1/1/2010";
+            String fecha1 = "1/1/2010";
             DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-            Date date = format.parse(string);
-            Sorteo s = new Sorteo(1, date, "Sorteo LGBTQ+", 4, 11, 3);
-            lista_sorteos.add(s);
+            Date date1 = format.parse(fecha1);
+            Sorteo s1 = new Sorteo(1, date1, "Sorteo LGBTQ+", 4, 11, 3);
+            lista_sorteos.add(s1);
+            
+            String fecha2 = "2/2/2022";
+            Date date2 = format.parse(fecha2);
+            Sorteo s2 = new Sorteo(2, date2, "Sorteo Día de las Madres", 2, 8, 3);
+            lista_sorteos.add(s2);
+            
+            String fecha3 = "3/3/2003";
+            Date date3 = format.parse(fecha3);
+            Sorteo s3 = new Sorteo(3, date3, "Sorteo Cruz Roja", 5, 7, 1);
+            lista_sorteos.add(s3);
             
             lista_apuestas = new ArrayList<>();
-            Apuesta a = new Apuesta(u, s, 11, 2500, 50000); 
-            lista_apuestas.add(a);
+            
+            Apuesta a1 = new Apuesta(u1, s1, 11, 2500, 10000); 
+            lista_apuestas.add(a1);
+            Apuesta a2 = new Apuesta(u1, s2, 3, 1500, 0);
+            lista_apuestas.add(a2);
+            Apuesta a3 = new Apuesta(u1, s3, 5, 5000, 0);
+            lista_apuestas.add(a3);
+            
+            Apuesta a4 = new Apuesta(u2, s1, 2, 2000, 0);
+            lista_apuestas.add(a4);
+            Apuesta a5 = new Apuesta(u2, s2, 4, 4000, 0);
+            lista_apuestas.add(a5);
+            Apuesta a6 = new Apuesta(u2, s3, 7, 7000, 35000);
+            lista_apuestas.add(a6);
+            
+            Apuesta a7 = new Apuesta(u3, s2, 6, 3000, 0);
+            lista_apuestas.add(a7);
+            Apuesta a8 = new Apuesta(u3, s2, 8, 3000, 6000);
+            lista_apuestas.add(a8);
+            Apuesta a9 = new Apuesta(u3, s3, 10, 5000, 0);
+            lista_apuestas.add(a9);
             
         } catch (Exception ex) {
             Logger.getLogger(Model.class.getName()).log(Level.SEVERE, null, ex);
