@@ -122,7 +122,7 @@ public class Model {
         Date date = new Date();
         List<Sorteo> terminados = new ArrayList<>();
         for(Sorteo sorteo : this.lista_sorteos) {
-            if(sorteo.getFecha().compareTo(date) > 0) {
+            if(sorteo.getFecha().compareTo(date) <= 0) {
                 terminados.add(sorteo);
             }
         }
@@ -133,7 +133,7 @@ public class Model {
         Date date = new Date();
         List<Sorteo> futuros = new ArrayList<>();
         for(Sorteo sorteo : this.lista_sorteos) {
-            if(sorteo.getFecha().compareTo(date) <= 0) {
+            if(sorteo.getFecha().compareTo(date) > 0) {
                 futuros.add(sorteo);
             }
         }
@@ -176,11 +176,23 @@ public class Model {
         for(Sorteo sorteo : this.lista_sorteos) {
             if(sorteo.getNumero_sorteo() == numero_sorteo) {
                 sorteo.setNumero_ganador(numero_ganador);
+                updatePrize(sorteo);
                 break;
             }
         }
     }
     
-    
+    public void updatePrize(Sorteo sorteo) {
+        for(Apuesta apuesta : this.lista_apuestas) {
+            if(apuesta.getSorteo().getNumero_sorteo() == sorteo.getNumero_sorteo()) {
+                if(apuesta.getNumero_juego() == sorteo.getNumero_ganador()) {
+                    int prize = apuesta.getMonto_apuesta() * sorteo.getRetorno();
+                    apuesta.setMonto_premio(prize);
+                } else {
+                    apuesta.setMonto_premio(0);
+                }
+            }
+        }
+    }
     
 }
