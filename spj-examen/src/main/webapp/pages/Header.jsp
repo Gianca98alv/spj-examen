@@ -18,7 +18,7 @@
             <% } %>
             <% if( usuario != null){ %>
                 <% if(usuario.getAdministrador()){ %>
-                    <li><a href="/spj-examen/administrador">Actualizar sorteos</a></li>
+                    <li><a href="/spj-examen/admin">Actualizar sorteos</a></li>
                 <%} else { %>
                      <li><a href="/spj-examen/player">Apuestas</a></li>
                 <% } %>
