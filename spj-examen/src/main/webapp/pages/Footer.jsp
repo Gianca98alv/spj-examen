@@ -1,3 +1,3 @@
 <footer>
-   Primer examen de programacion de programacion 4
+   Primer examen de programación 4
 </footer>
